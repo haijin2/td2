@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://j0xfym7tg3a0"]
+
+[ext_resource type="PackedScene" uid="uid://5ptybv3at146" path="res://Tiles/Mobs/Soldier A.tscn" id="1_cg2us"]
+[ext_resource type="Script" path="res://Tiles/Mobs/Soldier A.gd" id="2_8dabn"]
+
+[sub_resource type="Curve2D" id="Curve2D_8of8v"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0, 128, 0, 0, 0, 0, 192, 128, 0, 0, 0, 0, 192, 512, 0, 0, 0, 0, 448, 512, 0, 0, 0, 0, 448, 128, 0, 0, 0, 0, 704, 128, 0, 0, 0, 0, 704, 512, 0, 0, 0, 0, 960, 512, 0, 0, 0, 0, 960, 128, 0, 0, 0, 0, 1152, 128)
+}
+point_count = 10
+
+[node name="Path2D" type="Path2D"]
+curve = SubResource("Curve2D_8of8v")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="."]
+position = Vector2(0, 256)
+loop = false
+
+[node name="Soldier A" parent="PathFollow2D" instance=ExtResource("1_cg2us")]
+position = Vector2(0, -128)
+script = ExtResource("2_8dabn")
+speed = null
