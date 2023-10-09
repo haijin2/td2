@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://cm36hspeyjurs" path="res://Tiles/TileMap.tscn" id="1_0jsxc"]
 [ext_resource type="Script" path="res://PathSpawner.gd" id="2_w13fv"]
-[ext_resource type="PackedScene" uid="uid://t7guqcfaangg" path="res://Towers/RedBulletTower.tscn" id="3_q1g1j"]
+[ext_resource type="PackedScene" uid="uid://c7jhvgaeblu0y" path="res://ui.tscn" id="3_fvpnv"]
 
 [node name="Main" type="Node2D"]
 
@@ -17,7 +17,6 @@ autostart = true
 
 [node name="Towers" type="Node2D" parent="."]
 
-[node name="RedBulletTower" parent="Towers" instance=ExtResource("3_q1g1j")]
-position = Vector2(64, 256)
+[node name="UI" parent="." instance=ExtResource("3_fvpnv")]
 
 [connection signal="timeout" from="PathSpawner/Timer" to="PathSpawner" method="_on_timer_timeout"]
